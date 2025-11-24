@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2025-11-24T11:24:00+08:00",
+    "desc": "feat(pomodoro): add short break 5-minute preset",
+    "verified": true
+  },
+  {
     "timestamp": "2025-11-24T10:07:00+08:00",
     "desc": "style(buttons): standardize primary action button padding",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2025-11-10T10:06:00+08:00",
     "desc": "style(tailwind): refine dark mode card borders and hover states",
-    "verified": true
-  },
-  {
-    "timestamp": "2025-11-10T09:49:00+08:00",
-    "desc": "feat(ui): add responsive sidebar navigation for student portal",
     "verified": true
   }
 ]
