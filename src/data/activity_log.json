@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-01-03T11:22:00+08:00",
+    "desc": "style(tailwind): refine dark mode card borders and hover states",
+    "verified": true
+  },
+  {
     "timestamp": "2026-01-03T10:05:00+08:00",
     "desc": "feat(ui): add responsive sidebar navigation for student portal",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2025-12-20T09:50:00+08:00",
     "desc": "perf(render): memoize course list filtering",
-    "verified": true
-  },
-  {
-    "timestamp": "2025-12-19T16:14:00+08:00",
-    "desc": "feat(tasks): add due-date sorting for upcoming assignments",
     "verified": true
   }
 ]
