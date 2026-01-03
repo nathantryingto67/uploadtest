@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-01-03T10:05:00+08:00",
+    "desc": "feat(ui): add responsive sidebar navigation for student portal",
+    "verified": true
+  },
+  {
     "timestamp": "2026-01-03T09:48:00+08:00",
     "desc": "docs(changelog): document initial semester milestones",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2025-12-19T16:14:00+08:00",
     "desc": "feat(tasks): add due-date sorting for upcoming assignments",
-    "verified": true
-  },
-  {
-    "timestamp": "2025-12-19T14:57:00+08:00",
-    "desc": "docs(readme): update local development setup instructions",
     "verified": true
   }
 ]
