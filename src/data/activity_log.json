@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-03-01T18:47:00+08:00",
+    "desc": "feat(gpa): add cumulative credit unit validation",
+    "verified": true
+  },
+  {
     "timestamp": "2026-03-01T17:30:00+08:00",
     "desc": "style(tailwind): refine dark mode card borders and hover states",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-02-16T09:49:00+08:00",
     "desc": "feat(notes): add quick markdown preview toggle",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-02-15T17:31:00+08:00",
-    "desc": "perf(render): memoize course list filtering",
     "verified": true
   }
 ]
