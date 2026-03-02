@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-03-02T17:30:00+08:00",
+    "desc": "style(buttons): standardize primary action button padding",
+    "verified": true
+  },
+  {
     "timestamp": "2026-03-02T16:13:00+08:00",
     "desc": "feat(notes): add quick markdown preview toggle",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-02-16T18:48:00+08:00",
     "desc": "feat(ui): add responsive sidebar navigation for student portal",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-02-16T17:31:00+08:00",
-    "desc": "docs(changelog): document initial semester milestones",
     "verified": true
   }
 ]
