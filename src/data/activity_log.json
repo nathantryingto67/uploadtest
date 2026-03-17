@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-03-17T11:23:00+08:00",
+    "desc": "feat(notes): add quick markdown preview toggle",
+    "verified": true
+  },
+  {
     "timestamp": "2026-03-17T10:06:00+08:00",
     "desc": "perf(render): memoize course list filtering",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-03-03T14:56:00+08:00",
     "desc": "docs(changelog): document initial semester milestones",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-03-03T13:39:00+08:00",
-    "desc": "test(tasks): verify assignment completion toggle state",
     "verified": true
   }
 ]
