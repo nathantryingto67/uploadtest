@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-04-01T14:56:00+08:00",
+    "desc": "feat(flashcards): add keyboard shortcut for flipping cards",
+    "verified": true
+  },
+  {
     "timestamp": "2026-04-01T13:39:00+08:00",
     "desc": "refactor(components): simplify modal backdrop click handling",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-03-19T09:49:00+08:00",
     "desc": "refactor(schedule): extract weekly timetable grid helper",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-03-18T16:14:00+08:00",
-    "desc": "feat(gpa): add cumulative credit unit validation",
     "verified": true
   }
 ]
