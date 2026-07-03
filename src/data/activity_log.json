@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-07-03T09:48:00+08:00",
+    "desc": "test(gpa): add edge case tests for zero-credit courses",
+    "verified": true
+  },
+  {
     "timestamp": "2026-07-02T16:13:00+08:00",
     "desc": "refactor(schedule): extract weekly timetable grid helper",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-06-18T13:40:00+08:00",
     "desc": "feat(pomodoro): add short break 5-minute preset",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-06-18T11:23:00+08:00",
-    "desc": "style(buttons): standardize primary action button padding",
     "verified": true
   }
 ]
