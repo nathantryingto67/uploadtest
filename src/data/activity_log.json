@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-07-16T13:40:00+08:00",
+    "desc": "perf(render): memoize course list filtering",
+    "verified": true
+  },
+  {
     "timestamp": "2026-07-16T11:23:00+08:00",
     "desc": "feat(tasks): add due-date sorting for upcoming assignments",
     "verified": true
@@ -492,11 +497,6 @@
   {
     "timestamp": "2026-07-02T09:48:00+08:00",
     "desc": "test(tasks): verify assignment completion toggle state",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-07-01T18:47:00+08:00",
-    "desc": "feat(flashcards): add keyboard shortcut for flipping cards",
     "verified": true
   }
 ]
