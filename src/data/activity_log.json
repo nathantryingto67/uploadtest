@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-16T10:06:00+08:00",
+    "desc": "perf(render): memoize course list filtering",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-16T09:49:00+08:00",
     "desc": "feat(tasks): add due-date sorting for upcoming assignments",
     "verified": true
