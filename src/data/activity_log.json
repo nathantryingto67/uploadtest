@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-18T11:23:00+08:00",
+    "desc": "feat(tasks): add due-date sorting for upcoming assignments",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-18T10:06:00+08:00",
     "desc": "docs(readme): update local development setup instructions",
     "verified": true
