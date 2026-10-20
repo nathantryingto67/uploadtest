@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-20T17:32:00+08:00",
+    "desc": "style(buttons): standardize primary action button padding",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-20T16:15:00+08:00",
     "desc": "feat(notes): add quick markdown preview toggle",
     "verified": true
