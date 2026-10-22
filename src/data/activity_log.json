@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-22T09:50:00+08:00",
+    "desc": "style(tailwind): refine dark mode card borders and hover states",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-21T16:15:00+08:00",
     "desc": "feat(ui): add responsive sidebar navigation for student portal",
     "verified": true
