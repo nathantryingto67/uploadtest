@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-26T10:07:00+08:00",
+    "desc": "feat(ui): add responsive sidebar navigation for student portal",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-26T09:50:00+08:00",
     "desc": "docs(changelog): document initial semester milestones",
     "verified": true
@@ -503,12 +508,6 @@
     "timestamp": "2026-11-15T11:25:00+08:00",
     "iteration": 12,
     "build": "1.0.12",
-    "status": "verified"
-  },
-  {
-    "timestamp": "2026-11-14T14:25:00+08:00",
-    "iteration": 11,
-    "build": "1.0.11",
     "status": "verified"
   }
 ]
