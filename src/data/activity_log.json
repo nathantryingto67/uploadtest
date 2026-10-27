@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-27T17:32:00+08:00",
+    "desc": "feat(flashcards): add keyboard shortcut for flipping cards",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-27T16:15:00+08:00",
     "desc": "refactor(components): simplify modal backdrop click handling",
     "verified": true
@@ -495,11 +500,6 @@
   {
     "timestamp": "2026-11-14T19:20:00+08:00",
     "desc": "test(auth): add unit test coverage for expired session logout",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-11-14T17:10:00+08:00",
-    "desc": "refactor(models): standardize course enrollment interface schemas",
     "verified": true
   }
 ]
