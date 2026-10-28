@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-28T14:58:00+08:00",
+    "desc": "feat(gpa): add cumulative credit unit validation",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-28T13:41:00+08:00",
     "desc": "style(tailwind): refine dark mode card borders and hover states",
     "verified": true
@@ -495,11 +500,6 @@
   {
     "timestamp": "2026-11-15T18:15:00+08:00",
     "desc": "docs(guide): update student quickstart instructions in README",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-11-15T16:30:00+08:00",
-    "desc": "feat(timer): add audible notification chime on interval completion",
     "verified": true
   }
 ]
