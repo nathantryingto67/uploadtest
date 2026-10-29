@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-10-29T10:07:00+08:00",
+    "desc": "feat(tasks): add due-date sorting for upcoming assignments",
+    "verified": true
+  },
+  {
     "timestamp": "2026-10-29T09:50:00+08:00",
     "desc": "docs(readme): update local development setup instructions",
     "verified": true
@@ -496,10 +501,5 @@
     "iteration": 20,
     "build": "1.4.20",
     "status": "verified"
-  },
-  {
-    "timestamp": "2026-11-13T19:10:00+08:00",
-    "desc": "perf(gpa): optimize grade weight accumulator recalculation",
-    "verified": true
   }
 ]
