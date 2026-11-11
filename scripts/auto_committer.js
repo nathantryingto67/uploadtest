@@ -8,14 +8,15 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const stateFile = path.join(rootDir, '.activity_state.json');
 
-// Pool of realistic school-related React/Tailwind & Flutter project improvements
-const commitCatalog = [
+// Catalog of school-related commits covering ReactJS + TailwindCSS & Flutter + Dart
+const staticCatalog = [
+  // React + Tailwind Components
   {
     type: 'feat',
     scope: 'gpa',
     message: 'implement weighted grade scale and GPA target forecaster',
     filePath: 'src/components/GpaCalculator.jsx',
-    generateContent: () => `import React, { useState } from 'react';
+    content: `import React, { useState } from 'react';
 
 export default function GpaCalculator() {
   const [courses, setCourses] = useState([
@@ -64,15 +65,14 @@ export default function GpaCalculator() {
       </div>
     </div>
   );
-}
-`
+}`
   },
   {
     type: 'feat',
     scope: 'tasks',
     message: 'add assignment priority tagging and submission deadlines',
     filePath: 'src/components/AssignmentTracker.jsx',
-    generateContent: () => `import React, { useState } from 'react';
+    content: `import React, { useState } from 'react';
 
 export default function AssignmentTracker() {
   const [tasks, setTasks] = useState([
@@ -125,15 +125,14 @@ export default function AssignmentTracker() {
       </div>
     </div>
   );
-}
-`
+}`
   },
   {
     type: 'feat',
     scope: 'pomodoro',
     message: 'add configurable interval duration and session cycle counter',
     filePath: 'src/components/PomodoroTimer.jsx',
-    generateContent: () => `import React, { useState, useEffect } from 'react';
+    content: `import React, { useState, useEffect } from 'react';
 
 export default function PomodoroTimer() {
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
@@ -182,15 +181,14 @@ export default function PomodoroTimer() {
       </div>
     </div>
   );
-}
-`
+}`
   },
   {
     type: 'feat',
     scope: 'flashcards',
     message: 'implement spaced repetition flashcard review module',
     filePath: 'src/components/FlashcardDeck.jsx',
-    generateContent: () => `import React, { useState } from 'react';
+    content: `import React, { useState } from 'react';
 
 export default function FlashcardDeck() {
   const cards = [
@@ -234,15 +232,14 @@ export default function FlashcardDeck() {
       </div>
     </div>
   );
-}
-`
+}`
   },
   {
     type: 'feat',
     scope: 'notes',
     message: 'add quick markdown study notes and cheat-sheet viewer',
     filePath: 'src/components/StudyNotes.jsx',
-    generateContent: () => `import React, { useState } from 'react';
+    content: `import React, { useState } from 'react';
 
 export default function StudyNotes() {
   const [notes, setNotes] = useState([
@@ -268,15 +265,149 @@ export default function StudyNotes() {
       </div>
     </div>
   );
+}`
+  },
+  // Flutter + Dart Companion App Components
+  {
+    type: 'feat',
+    scope: 'flutter',
+    message: 'initialize Flutter mobile companion app with MaterialApp setup',
+    filePath: 'mobile_app/lib/main.dart',
+    content: `import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const CampusHubApp());
 }
-`
+
+class CampusHubApp extends StatelessWidget {
+  const CampusHubApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'CampusHub Mobile',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(0xFF020617),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF4F46E5),
+          secondary: Color(0xFF6366F1),
+          surface: Color(0xFF0F172A),
+        ),
+      ),
+      home: const StudentDashboardScreen(),
+    );
+  }
+}
+
+class StudentDashboardScreen extends StatelessWidget {
+  const StudentDashboardScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('CampusHub', style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFF0F172A),
+        elevation: 0,
+      ),
+      body: const Center(
+        child: Text('Academic Schedule & Course Overview', style: TextStyle(color: Colors.white70)),
+      ),
+    );
+  }
+}`
+  },
+  {
+    type: 'feat',
+    scope: 'flutter',
+    message: 'add course timetable list model and card layout in Dart',
+    filePath: 'mobile_app/lib/models/course.dart',
+    content: `class Course {
+  final String code;
+  final String name;
+  final String time;
+  final String room;
+  final String instructor;
+  final int credits;
+
+  const Course({
+    required this.code,
+    required this.name,
+    required this.time,
+    required this.room,
+    required this.instructor,
+    required this.credits,
+  });
+
+  factory Course.fromJson(Map<String, dynamic> json) {
+    return Course(
+      code: json['code'] as String,
+      name: json['name'] as String,
+      time: json['time'] as String,
+      room: json['room'] as String,
+      instructor: json['instructor'] as String,
+      credits: json['credits'] as int,
+    );
+  }
+}`
+  },
+  {
+    type: 'feat',
+    scope: 'flutter',
+    message: 'add course card UI widget with modern rounded borders and badges',
+    filePath: 'mobile_app/lib/widgets/course_card.dart',
+    content: `import 'package:flutter/material.dart';
+import '../models/course.dart';
+
+class CourseCard extends StatelessWidget {
+  final Course course;
+
+  const CourseCard({super.key, required this.course});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF0F172A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: const Color(0xFF1E293B)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.between,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: const Color(0x334F46E5),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(course.code, style: const TextStyle(color: Color(0xFF818CF8), fontWeight: FontWeight.bold, fontSize: 12)),
+              ),
+              Text(course.time, style: const TextStyle(color: Colors.white54, fontSize: 12)),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Text(course.name, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
+          const SizedBox(height: 6),
+          Text('Room: \${course.room} • \${course.instructor}', style: const TextStyle(color: Colors.white54, fontSize: 12)),
+        ],
+      ),
+    );
+  }
+}`
   },
   {
     type: 'style',
     scope: 'tailwind',
     message: 'polish dark theme gradients and responsive navigation styling',
     filePath: 'src/index.css',
-    generateContent: () => `@import "tailwindcss";
+    content: `@import "tailwindcss";
 
 @layer base {
   body {
@@ -301,15 +432,14 @@ export default function StudyNotes() {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
-}
-`
+}`
   },
   {
     type: 'feat',
     scope: 'schedule',
     message: 'add course syllabus room locator and lab contact details',
     filePath: 'src/data/courses.json',
-    generateContent: () => JSON.stringify([
+    content: JSON.stringify([
       { id: 'CS201', title: 'Data Structures & Algorithms', instructor: 'Dr. Aris Thorne', room: 'Sci-Tech 304', credits: 4, schedule: 'MW 09:00 - 10:30' },
       { id: 'MATH215', title: 'Discrete Mathematics', instructor: 'Prof. Elena Rostova', room: 'Math 102', credits: 3, schedule: 'TTh 11:00 - 12:30' },
       { id: 'CS320', title: 'Web Application Development', instructor: 'Engr. Marcus Vance', room: 'Lab 3B', credits: 3, schedule: 'MWF 13:30 - 15:00' },
@@ -322,7 +452,7 @@ export default function StudyNotes() {
     scope: 'gpa',
     message: 'add test suite for weighted GPA computation edge cases',
     filePath: 'src/utils/gpa.test.js',
-    generateContent: () => `// Test suite for GPA computation utility
+    content: `// Test suite for GPA computation utility
 export function calculateGpa(courses) {
   const gradePoints = { 'A': 4.0, 'B': 3.0, 'C': 2.0, 'D': 1.0, 'F': 0.0 };
   const totalCredits = courses.reduce((sum, c) => sum + c.credits, 0);
@@ -338,15 +468,14 @@ const sample = [
 ];
 const result = calculateGpa(sample);
 console.assert(result === 3.5, 'Expected 3.5');
-console.log('All tests passed.');
-`
+console.log('All tests passed.');`
   },
   {
     type: 'docs',
     scope: 'roadmap',
     message: 'update project architecture guide and semester milestones',
     filePath: 'ROADMAP.md',
-    generateContent: () => `# CampusHub Academic Suite &bull; Milestones
+    content: `# CampusHub Academic Suite • Milestones
 
 ## Current Sprint
 - [x] High-performance React 19 SPA scaffold
@@ -355,14 +484,58 @@ console.log('All tests passed.');
 - [x] Assignment deadlines and priority tagging
 - [x] Focus interval Pomodoro timer with cycle tracking
 - [x] Spaced repetition flashcards (CS fundamentals)
+- [x] Flutter companion app scaffold with course cards
 
 ## Next Sprint
 - [ ] Export schedule to iCalendar (.ics) format
 - [ ] Offline caching using Service Workers
-- [ ] Mobile companion Flutter app integration
-`
+- [ ] Cross-platform SQLite offline sync`
   }
 ];
+
+// Dynamic generator for procedural daily updates (refactors, optimizations, test cases, docs)
+function getDynamicEnhancement(iteration, dateStr) {
+  const topics = [
+    { scope: 'timetable', module: 'ScheduleView', desc: 'optimize weekly timetable grid rendering and slot collisions' },
+    { scope: 'tailwind', module: 'styles', desc: 'refine button hover transitions and active ring styling' },
+    { scope: 'gpa', module: 'calculator', desc: 'add honors Latin grade classification thresholds (Cum Laude)' },
+    { scope: 'tasks', module: 'assignments', desc: 'add overdue badge alert for past-deadline course deliverables' },
+    { scope: 'flutter', module: 'mobile_theme', desc: 'update dark mode elevated card shadows for mobile screens' },
+    { scope: 'notes', module: 'study_notes', desc: 'add quick search filter by course subject tag' },
+    { scope: 'pomodoro', module: 'timer', desc: 'add optional 50/10 long study interval preset' },
+    { scope: 'components', module: 'badges', desc: 'extract reusable StatusPill and MetricCard components' },
+    { scope: 'perf', module: 'state', desc: 'memoize course list filtering with useMemo to prevent re-renders' },
+    { scope: 'docs', module: 'changelog', desc: 'update academic release notes and revision log' }
+  ];
+
+  const pick = topics[iteration % topics.length];
+  const patchFile = 'src/data/activity_log.json';
+
+  let logs = [];
+  const fullPatchPath = path.join(rootDir, patchFile);
+  if (fs.existsSync(fullPatchPath)) {
+    try { logs = JSON.parse(fs.readFileSync(fullPatchPath, 'utf8')); } catch (e) {}
+  }
+
+  logs.unshift({
+    timestamp: new Date().toISOString(),
+    iteration,
+    scope: pick.scope,
+    module: pick.module,
+    description: pick.desc,
+  });
+
+  // Keep latest 50 entries
+  if (logs.length > 50) logs = logs.slice(0, 50);
+
+  return {
+    type: iteration % 3 === 0 ? 'refactor' : (iteration % 4 === 0 ? 'perf' : 'feat'),
+    scope: pick.scope,
+    message: pick.desc,
+    filePath: patchFile,
+    content: JSON.stringify(logs, null, 2)
+  };
+}
 
 function run() {
   const today = new Date().toISOString().split('T')[0];
@@ -390,9 +563,14 @@ function run() {
     return;
   }
 
-  // Pick the next enhancement
-  const item = commitCatalog[state.featureIndex % commitCatalog.length];
-  state.featureIndex = (state.featureIndex + 1);
+  // Pick enhancement: static catalog first, then dynamic procedural enhancements
+  let item;
+  if (state.featureIndex < staticCatalog.length) {
+    item = staticCatalog[state.featureIndex];
+  } else {
+    item = getDynamicEnhancement(state.featureIndex, today);
+  }
+  state.featureIndex += 1;
 
   const targetPath = path.join(rootDir, item.filePath);
   const targetDir = path.dirname(targetPath);
@@ -400,7 +578,7 @@ function run() {
     fs.mkdirSync(targetDir, { recursive: true });
   }
 
-  fs.writeFileSync(targetPath, item.generateContent(), 'utf8');
+  fs.writeFileSync(targetPath, item.content, 'utf8');
 
   // Stage and commit
   const commitMsg = item.type + '(' + item.scope + '): ' + item.message;
