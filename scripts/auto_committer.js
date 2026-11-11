@@ -538,7 +538,8 @@ function getDynamicEnhancement(iteration, dateStr) {
 }
 
 function run() {
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const today = now.toLocaleDateString('en-CA'); // Accurate local date YYYY-MM-DD
   let state = { lastRunDate: '', todayCommitsDone: 0, todayTargetQuota: 2, featureIndex: 0 };
 
   if (fs.existsSync(stateFile)) {
