@@ -581,12 +581,25 @@ function run() {
 
   fs.writeFileSync(targetPath, item.content, 'utf8');
 
+  // Calculate realistic daytime timestamp so it is November 12 in ALL timezones (including UTC)
+  const currentHour = now.getHours();
+  let commitDateStr;
+  if (currentHour < 9) {
+    // If run during late night/early morning, pin timestamp to daytime (e.g. 10:00 AM to 3:00 PM)
+    // so UTC time is also guaranteed to match today's local date
+    const hour = 10 + (state.todayCommitsDone * 2);
+    commitDateStr = today + 'T' + String(hour).padStart(2, '0') + ':15:00+08:00';
+  } else {
+    commitDateStr = now.toISOString();
+  }
+
   // Stage and commit
   const commitMsg = item.type + '(' + item.scope + '): ' + item.message;
   
   try {
     execSync('git add .', { cwd: rootDir, stdio: 'inherit' });
-    execSync('git commit -m "' + commitMsg + '"', { cwd: rootDir, stdio: 'inherit' });
+    const gitEnv = { ...process.env, GIT_AUTHOR_DATE: commitDateStr, GIT_COMMITTER_DATE: commitDateStr };
+    execSync('git commit --date="' + commitDateStr + '" -m "' + commitMsg + '"', { cwd: rootDir, env: gitEnv, stdio: 'inherit' });
     execSync('git push origin main', { cwd: rootDir, stdio: 'inherit' });
     
     state.todayCommitsDone += 1;
