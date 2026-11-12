@@ -11,6 +11,7 @@ A modern academic portal and productivity suite built with **React** and **Tailw
 
 ## Features
 
+- **Degree Audit & Roadmap**: Interactive 4-year curriculum planner with credit milestones, prerequisite verification, and degree completion progress.
 - **Academic Dashboard**: High-level snapshot of enrolled courses, cumulative GPA progress, upcoming deadlines, and study hours.
 - **Weekly Timetable Planner**: Dynamic schedule viewer organizing classes, lecture hall locations, and meeting slots.
 - **GPA & Grade Forecaster**: Interactive calculator supporting weighted credit units, letter grades, and target GPA simulations.

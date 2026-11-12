@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DegreeRoadmap from './components/DegreeRoadmap.jsx'
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -21,6 +22,7 @@ export default function App() {
           <nav className="flex space-x-1 sm:space-x-2">
             {[
               { id: 'dashboard', label: 'Dashboard' },
+              { id: 'roadmap', label: 'Degree Roadmap' },
               { id: 'schedule', label: 'Class Schedule' },
               { id: 'gpa', label: 'GPA Calculator' },
               { id: 'tasks', label: 'Assignments' },
@@ -45,6 +47,7 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === 'dashboard' && <DashboardView onNavigate={setActiveTab} />}
+        {activeTab === 'roadmap' && <DegreeRoadmap />}
         {activeTab === 'schedule' && <ScheduleView />}
         {activeTab === 'gpa' && <GpaCalculatorView />}
         {activeTab === 'tasks' && <TasksView />}
@@ -76,16 +79,16 @@ function DashboardView({ onNavigate }) {
         </div>
         <div className="flex gap-2">
           <button
-            onClick={() => onNavigate('tasks')}
+            onClick={() => onNavigate('roadmap')}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition"
           >
-            + Add Assignment
+            View Degree Roadmap
           </button>
           <button
-            onClick={() => onNavigate('pomodoro')}
+            onClick={() => onNavigate('tasks')}
             className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-sm font-medium transition"
           >
-            Start Focus Session
+            + Add Assignment
           </button>
         </div>
       </div>
