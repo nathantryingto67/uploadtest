@@ -598,7 +598,15 @@ function run() {
   
   try {
     execSync('git add .', { cwd: rootDir, stdio: 'inherit' });
-    const gitEnv = { ...process.env, GIT_AUTHOR_DATE: commitDateStr, GIT_COMMITTER_DATE: commitDateStr };
+    const gitEnv = {
+      ...process.env,
+      GIT_AUTHOR_NAME: 'Nathan',
+      GIT_AUTHOR_EMAIL: '342412423+nathantryingto67@users.noreply.github.com',
+      GIT_COMMITTER_NAME: 'Nathan',
+      GIT_COMMITTER_EMAIL: '342412423+nathantryingto67@users.noreply.github.com',
+      GIT_AUTHOR_DATE: commitDateStr,
+      GIT_COMMITTER_DATE: commitDateStr
+    };
     execSync('git commit --date="' + commitDateStr + '" -m "' + commitMsg + '"', { cwd: rootDir, env: gitEnv, stdio: 'inherit' });
     execSync('git push origin main', { cwd: rootDir, stdio: 'inherit' });
     
