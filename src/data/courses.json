@@ -1,0 +1,42 @@
+[
+  {
+    "id": "CS201",
+    "title": "Data Structures & Algorithms",
+    "instructor": "Dr. Aris Thorne",
+    "room": "Sci-Tech 304",
+    "credits": 4,
+    "schedule": "MW 09:00 - 10:30"
+  },
+  {
+    "id": "MATH215",
+    "title": "Discrete Mathematics",
+    "instructor": "Prof. Elena Rostova",
+    "room": "Math 102",
+    "credits": 3,
+    "schedule": "TTh 11:00 - 12:30"
+  },
+  {
+    "id": "CS320",
+    "title": "Web Application Development",
+    "instructor": "Engr. Marcus Vance",
+    "room": "Lab 3B",
+    "credits": 3,
+    "schedule": "MWF 13:30 - 15:00"
+  },
+  {
+    "id": "PHYS102",
+    "title": "General Physics II",
+    "instructor": "Dr. Liam Chen",
+    "room": "Lecture Hall A",
+    "credits": 4,
+    "schedule": "TTh 15:30 - 17:00"
+  },
+  {
+    "id": "ENG205",
+    "title": "Technical Communication for Engineers",
+    "instructor": "Prof. Sarah Jenkins",
+    "room": "Humanities 210",
+    "credits": 3,
+    "schedule": "F 09:00 - 12:00"
+  }
+]
