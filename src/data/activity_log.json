@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-11-14T19:20:00+08:00",
+    "desc": "test(auth): add unit test coverage for expired session logout",
+    "verified": true
+  },
+  {
     "timestamp": "2026-11-14T17:10:00+08:00",
     "desc": "refactor(models): standardize course enrollment interface schemas",
     "verified": true
