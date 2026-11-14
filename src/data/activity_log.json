@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-11-14T15:30:00+08:00",
+    "desc": "feat(analytics): add semester study progress ring visualization",
+    "verified": true
+  },
+  {
     "timestamp": "2026-11-14T12:15:00+08:00",
     "desc": "style(dashboard): improve mobile card padding and touch target sizes",
     "verified": true
