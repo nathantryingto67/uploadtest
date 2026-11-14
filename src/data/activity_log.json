@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-11-14T17:10:00+08:00",
+    "desc": "refactor(models): standardize course enrollment interface schemas",
+    "verified": true
+  },
+  {
     "timestamp": "2026-11-14T15:30:00+08:00",
     "desc": "feat(analytics): add semester study progress ring visualization",
     "verified": true
