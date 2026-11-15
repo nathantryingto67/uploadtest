@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-11-15T14:50:00+08:00",
+    "desc": "perf(render): memoize active tab navigation component switches",
+    "verified": true
+  },
+  {
     "timestamp": "2026-11-15T12:40:00+08:00",
     "desc": "style(badges): add gradient pill status indicators for courses",
     "verified": true
