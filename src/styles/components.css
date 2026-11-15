@@ -1,0 +1,8 @@
+/* Component specific micro-interactions */
+.interactive-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.interactive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1);
+}
