@@ -1,5 +1,10 @@
 [
   {
+    "timestamp": "2026-11-15T18:15:00+08:00",
+    "desc": "docs(guide): update student quickstart instructions in README",
+    "verified": true
+  },
+  {
     "timestamp": "2026-11-15T16:30:00+08:00",
     "desc": "feat(timer): add audible notification chime on interval completion",
     "verified": true
