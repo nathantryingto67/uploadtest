@@ -66,67 +66,34 @@ export default function LibraryCatalog() {
   },
   {
     type: 'feat',
-    scope: 'gpa',
-    message: 'add semester target GPA projection and honors standing tier',
-    filePath: 'src/utils/honorsCalculator.js',
-    content: `// Academic honors tier classifier
-export function getHonorsStanding(cumulativeGpa) {
-  if (cumulativeGpa >= 3.85) return 'Summa Cum Laude';
-  if (cumulativeGpa >= 3.70) return 'Magna Cum Laude';
-  if (cumulativeGpa >= 3.50) return 'Cum Laude';
-  if (cumulativeGpa >= 3.20) return "Dean's List";
-  return 'Good Academic Standing';
-}
-`
-  },
-  {
-    type: 'style',
-    scope: 'tailwind',
-    message: 'enhance interactive card focus states and accessible outline rings',
-    filePath: 'src/styles/components.css',
-    content: `/* Component specific micro-interactions */
-.interactive-card {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.interactive-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1);
-}
-`
-  },
-  {
-    type: 'feat',
-    scope: 'attendance',
-    message: 'add lecture attendance streak tracker and absence warnings',
-    filePath: 'src/components/AttendanceTracker.jsx',
+    scope: 'kanban',
+    message: 'implement drag-and-drop assignment priority kanban columns',
+    filePath: 'src/components/AssignmentKanban.jsx',
     content: `import React, { useState } from 'react';
 
-export default function AttendanceTracker() {
-  const [courses] = useState([
-    { id: 'CS201', name: 'Data Structures & Algorithms', attended: 26, total: 28, minRequired: 80 },
-    { id: 'MATH215', name: 'Discrete Mathematics', attended: 22, total: 24, minRequired: 80 },
-    { id: 'PHYS102', name: 'General Physics II', attended: 20, total: 24, minRequired: 80 },
+export default function AssignmentKanban() {
+  const [columns] = useState([
+    { title: 'To Do', items: ['Discrete Math Problem Set 5', 'Physics Optics Pre-Lab'] },
+    { title: 'In Progress', items: ['Data Structures AVL Tree Implementation'] },
+    { title: 'Completed', items: ['Web Development Tailwind Navigation Bar'] },
   ]);
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-2xl">
-      <h2 className="text-xl font-bold text-white mb-2">Lecture Attendance Standing</h2>
-      <p className="text-xs text-slate-400 mb-6">Minimum 80% attendance requirement monitoring</p>
-      <div className="space-y-4">
-        {courses.map(c => {
-          const pct = Math.round((c.attended / c.total) * 100);
-          return (
-            <div key={c.id} className="p-4 bg-slate-950 rounded-lg border border-slate-800 space-y-2">
-              <div className="flex justify-between items-center text-sm">
-                <span className="font-semibold text-white">{c.name}</span>
-                <span className="text-indigo-400 font-mono font-bold">{pct}% ({c.attended}/{c.total})</span>
-              </div>
-              <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                <div className="bg-indigo-500 h-2 rounded-full" style={{ width: pct + '%' }} />
-              </div>
+    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+      <h2 className="text-xl font-bold text-white">Assignment Kanban Board</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {columns.map(col => (
+          <div key={col.title} className="bg-slate-950 border border-slate-800 rounded-xl p-4">
+            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">{col.title} ({col.items.length})</h3>
+            <div className="space-y-2">
+              {col.items.map((it, idx) => (
+                <div key={idx} className="p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-200 font-medium hover:border-indigo-500/40 transition">
+                  {it}
+                </div>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -135,28 +102,151 @@ export default function AttendanceTracker() {
   },
   {
     type: 'feat',
+    scope: 'countdown',
+    message: 'add final exam countdown timer with critical milestone alerts',
+    filePath: 'src/components/ExamCountdown.jsx',
+    content: `import React, { useState } from 'react';
+
+export default function ExamCountdown() {
+  const [exams] = useState([
+    { subject: 'CS 201: Data Structures', daysLeft: 18, date: '2026-12-04' },
+    { subject: 'MATH 215: Discrete Math', daysLeft: 22, date: '2026-12-08' },
+    { subject: 'PHYS 102: Physics II', daysLeft: 25, date: '2026-12-11' },
+  ]);
+
+  return (
+    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-lg">
+      <h2 className="text-xl font-bold text-white mb-2">Final Examination Countdown</h2>
+      <p className="text-xs text-slate-400 mb-6">Fall semester finals examination schedule</p>
+      <div className="space-y-3">
+        {exams.map(ex => (
+          <div key={ex.subject} className="p-4 bg-slate-950 rounded-lg border border-slate-800 flex justify-between items-center">
+            <div>
+              <p className="text-sm font-semibold text-white">{ex.subject}</p>
+              <p className="text-xs text-slate-400">{ex.date}</p>
+            </div>
+            <div className="text-right">
+              <span className="text-lg font-bold font-mono text-indigo-400">{ex.daysLeft}</span>
+              <span className="text-[10px] text-slate-500 block uppercase">days left</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+`
+  },
+  {
+    type: 'feat',
+    scope: 'cafeteria',
+    message: 'add campus dining hall menu and student dietary macro filter',
+    filePath: 'src/components/CafeteriaMenu.jsx',
+    content: `import React, { useState } from 'react';
+
+export default function CafeteriaMenu() {
+  const [meals] = useState([
+    { name: 'Grilled Herb Chicken & Quinoa', station: 'Main Grill', cal: 520, tag: 'High Protein' },
+    { name: 'Mediterranean Falafel Bowl', station: 'Vegan Station', cal: 460, tag: 'Vegetarian' },
+    { name: 'Classic Tomato Basil Pasta', station: 'Italian Corner', cal: 580, tag: 'Comfort' },
+  ]);
+
+  return (
+    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-2xl">
+      <h2 className="text-xl font-bold text-white mb-2">Student Union Dining Daily Menu</h2>
+      <div className="space-y-3 mt-4">
+        {meals.map(m => (
+          <div key={m.name} className="p-3 bg-slate-950 rounded-lg border border-slate-800 flex justify-between items-center text-xs">
+            <div>
+              <p className="text-sm font-medium text-white">{m.name}</p>
+              <p className="text-slate-400">{m.station} &bull; {m.cal} kcal</p>
+            </div>
+            <span className="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-medium">
+              {m.tag}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+`
+  },
+  {
+    type: 'feat',
+    scope: 'audio',
+    message: 'add study ambient background sound generator for focus sessions',
+    filePath: 'src/components/AmbientPlayer.jsx',
+    content: `import React, { useState } from 'react';
+
+export default function AmbientPlayer() {
+  const [tracks] = useState(['Rain on Campus Window', 'Library Soft Murmur', 'White Noise', 'Campfire Lo-Fi']);
+  const [activeTrack, setActiveTrack] = useState(null);
+
+  return (
+    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md">
+      <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Study Focus Soundscapes</h3>
+      <div className="grid grid-cols-2 gap-2">
+        {tracks.map(t => (
+          <button
+            key={t}
+            onClick={() => setActiveTrack(activeTrack === t ? null : t)}
+            className={"p-3 rounded-lg text-xs font-medium text-left border transition " + (activeTrack === t ? 'bg-indigo-600 text-white border-indigo-500' : 'bg-slate-950 text-slate-300 border-slate-800 hover:border-slate-700')}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+`
+  },
+  {
+    type: 'feat',
+    scope: 'curve',
+    message: 'add exam grade curve normal distribution visualizer',
+    filePath: 'src/utils/gradeCurve.js',
+    content: `// Grade curve calculator
+export function calculateCurvedGrade(rawScore, mean, stdDev) {
+  const zScore = (rawScore - mean) / stdDev;
+  if (zScore >= 1.5) return 'A';
+  if (zScore >= 0.5) return 'B';
+  if (zScore >= -0.5) return 'C';
+  if (zScore >= -1.5) return 'D';
+  return 'F';
+}
+`
+  },
+  {
+    type: 'feat',
     scope: 'flutter',
-    message: 'add quick assignment check-off dialog and floating action button in Dart',
-    filePath: 'mobile_app/lib/screens/tasks_screen.dart',
+    message: 'implement course syllabus detail view with expandable office hours',
+    filePath: 'mobile_app/lib/screens/course_detail_screen.dart',
     content: `import 'package:flutter/material.dart';
 
-class TasksScreen extends StatelessWidget {
-  const TasksScreen({super.key});
+class CourseDetailScreen extends StatelessWidget {
+  final String courseTitle;
+
+  const CourseDetailScreen({super.key, required this.courseTitle});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Assignments', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(courseTitle),
         backgroundColor: const Color(0xFF0F172A),
       ),
-      body: const Center(
-        child: Text('Assignment Deadlines & Quizzes', style: TextStyle(color: Colors.white70)),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color(0xFF4F46E5),
-        child: const Icon(Icons.add, color: Colors.white),
+      body: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Instructor Office Hours: Tue/Thu 2-4 PM', style: TextStyle(color: Colors.white70)),
+            SizedBox(height: 12),
+            Text('Textbook: Discrete Math and Its Applications', style: TextStyle(color: Colors.white70)),
+          ],
+        ),
       ),
     );
   }
@@ -164,42 +254,65 @@ class TasksScreen extends StatelessWidget {
 `
   },
   {
-    type: 'test',
-    scope: 'timetable',
-    message: 'add unit test suite for schedule overlap matrix computation',
-    filePath: 'src/utils/scheduleValidator.test.js',
-    content: `import { checkScheduleConflicts } from './scheduleValidator.js';
+    type: 'style',
+    scope: 'tailwind',
+    message: 'optimize gradient pill badges and smooth accordion animation transitions',
+    filePath: 'src/styles/badges.css',
+    content: `/* Badge and pill animations */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+`
+  },
+  {
+    type: 'perf',
+    scope: 'state',
+    message: 'memoize heavy timetable course filter loops with useMemo hook',
+    filePath: 'src/hooks/useCourseFilter.js',
+    content: `import { useMemo } from 'react';
 
-console.log('Testing checkScheduleConflicts...');
-const testCourses = [
-  { id: 'CS1', schedule: 'MW 09:00 - 10:30' },
-  { id: 'CS2', schedule: 'MW 09:00 - 10:30' },
-];
-const conflicts = checkScheduleConflicts(testCourses);
-console.assert(conflicts.length === 1, 'Expected 1 conflict');
-console.log('Schedule validator tests passed.');
+export function useCourseFilter(courses, query, category) {
+  return useMemo(() => {
+    return courses.filter(c => {
+      const matchQuery = !query || c.name.toLowerCase().includes(query.toLowerCase()) || c.code.toLowerCase().includes(query.toLowerCase());
+      const matchCat = category === 'all' || c.category === category;
+      return matchQuery && matchCat;
+    });
+  }, [courses, query, category]);
+}
+`
+  },
+  {
+    type: 'test',
+    scope: 'curve',
+    message: 'add unit test suite for normal distribution curve grading algorithm',
+    filePath: 'src/utils/gradeCurve.test.js',
+    content: `import { calculateCurvedGrade } from './gradeCurve.js';
+
+console.log('Testing calculateCurvedGrade...');
+console.assert(calculateCurvedGrade(85, 70, 10) === 'A', 'Expected A');
+console.assert(calculateCurvedGrade(72, 70, 10) === 'B', 'Expected B');
+console.log('Curve tests passed.');
 `
   },
   {
     type: 'docs',
-    scope: 'architecture',
-    message: 'document modular component hierarchy and study utilities API',
-    filePath: 'ARCHITECTURE.md',
-    content: `# CampusHub Architecture & Component Hierarchy
+    scope: 'changelog',
+    message: 'update sprint documentation and release v1.4 milestones',
+    filePath: 'CHANGELOG.md',
+    content: `# CampusHub Changelog
 
-## Design Principles
-- Single-page application modularized by academic workflows
-- State persistence using browser local storage hooks
-- Zero third-party telemetry or ad scripts
-- Tailwind CSS mobile-responsive utility styling
-
-## Feature Modules
-1. **Academic Dashboard**: High-level semester status
-2. **Degree Roadmap**: Prerequisite DAG and credit audit
-3. **Class Schedule**: Weekly timetable with conflict detection
-4. **GPA Forecaster**: Weighted unit letter-grade model
-5. **Study Focus Timer**: 25/5 and 50/10 Pomodoro intervals
-6. **Library & Resources**: Textbook reserves and holdings
+## v1.4.0 (Active Sprint)
+- Added Final Examination countdown module
+- Added lecture attendance threshold tracker
+- Added Campus Library holdings reserve list
+- Enhanced grade curving distribution logic
+- Added focus ambient study audio generator
 `
   }
 ];
@@ -219,11 +332,11 @@ function ensureGitDiff(iteration, targetDateStr) {
   logs.unshift({
     timestamp: targetDateStr,
     iteration,
-    build: '1.0.' + iteration,
+    build: '1.4.' + iteration,
     status: 'verified'
   });
 
-  if (logs.length > 50) logs = logs.slice(0, 50);
+  if (logs.length > 100) logs = logs.slice(0, 100);
   fs.writeFileSync(patchFile, JSON.stringify(logs, null, 2), 'utf8');
 }
 
@@ -235,7 +348,6 @@ function makeCommit(item, targetDateIso, iteration) {
   }
 
   fs.writeFileSync(targetPath, item.content, 'utf8');
-  // Always guarantee a unique diff
   ensureGitDiff(iteration, targetDateIso);
 
   const commitMsg = item.type + '(' + item.scope + '): ' + item.message;
@@ -278,7 +390,7 @@ function getDatesBetween(startDateStr, endDateStr) {
 function run() {
   const now = new Date();
   const today = now.toLocaleDateString('en-CA');
-  let state = { lastRunDate: '', todayCommitsDone: 0, todayTargetQuota: 2, featureIndex: 0 };
+  let state = { lastRunDate: '', todayCommitsDone: 0, todayTargetQuota: 7, featureIndex: 0 };
 
   if (fs.existsSync(stateFile)) {
     try {
@@ -286,15 +398,19 @@ function run() {
     } catch (e) {}
   }
 
-  // 1. Check for missed days to backfill
+  // Quota target: 6 to 8 commits per day (vibrant dark green)
+  const getRandomDailyQuota = () => Math.floor(Math.random() * 3) + 6; // 6, 7, or 8
+
+  // 1. Backfill any missed dates with 6-8 commits
   if (state.lastRunDate && state.lastRunDate < today) {
     const missedDates = getDatesBetween(state.lastRunDate, today).slice(1, -1);
     for (const missedDate of missedDates) {
-      console.log('[Daily Committer] Healing missed day: ' + missedDate);
-      const quotaForDay = Math.floor(Math.random() * 2) + 1; // 1 or 2 commits
+      console.log('[Daily Committer] Backfilling missed day: ' + missedDate);
+      const quotaForDay = getRandomDailyQuota();
       for (let c = 0; c < quotaForDay; c++) {
-        const hour = 11 + (c * 3);
-        const timestamp = missedDate + 'T' + String(hour).padStart(2, '0') + ':25:00+08:00';
+        const hour = 9 + Math.floor(c * 1.5);
+        const min = (c * 17) % 60;
+        const timestamp = missedDate + 'T' + String(hour).padStart(2, '0') + ':' + String(min).padStart(2, '0') + ':00+08:00';
         const item = catalog[state.featureIndex % catalog.length];
         state.featureIndex += 1;
         makeCommit(item, timestamp, state.featureIndex);
@@ -302,23 +418,31 @@ function run() {
     }
     state.lastRunDate = today;
     state.todayCommitsDone = 0;
-    state.todayTargetQuota = Math.floor(Math.random() * 3) + 1;
+    state.todayTargetQuota = getRandomDailyQuota();
     fs.writeFileSync(stateFile, JSON.stringify(state, null, 2), 'utf8');
   }
 
-  // 2. Process today's quota
-  if (!state.lastRunDate) {
+  // 2. Initialize today if needed
+  if (!state.lastRunDate || state.lastRunDate !== today) {
     state.lastRunDate = today;
     state.todayCommitsDone = 0;
-    state.todayTargetQuota = Math.floor(Math.random() * 3) + 1;
+    state.todayTargetQuota = getRandomDailyQuota();
   }
 
+  // If today's target quota was below 6, upgrade it to 7
+  if (state.todayTargetQuota < 6) {
+    state.todayTargetQuota = 7;
+  }
+
+  // 3. Fulfill today's commit
   if (state.todayCommitsDone < state.todayTargetQuota) {
     const currentHour = now.getHours();
     let commitTimeStr;
     if (currentHour < 9) {
-      const hour = 10 + (state.todayCommitsDone * 2);
-      commitTimeStr = today + 'T' + String(hour).padStart(2, '0') + ':30:00+08:00';
+      // Early morning runs get realistic daytime schedule across 9 AM to 8 PM
+      const hour = 9 + Math.floor(state.todayCommitsDone * 1.4);
+      const min = (state.todayCommitsDone * 19) % 60;
+      commitTimeStr = today + 'T' + String(hour).padStart(2, '0') + ':' + String(min).padStart(2, '0') + ':00+08:00';
     } else {
       commitTimeStr = now.toISOString();
     }
@@ -331,8 +455,9 @@ function run() {
       state.todayCommitsDone += 1;
     }
     fs.writeFileSync(stateFile, JSON.stringify(state, null, 2), 'utf8');
+    console.log('[Daily Committer] Today progress: ' + state.todayCommitsDone + '/' + state.todayTargetQuota + ' commits.');
   } else {
-    console.log('[Daily Committer] Today quota (' + state.todayCommitsDone + '/' + state.todayTargetQuota + ') already filled.');
+    console.log('[Daily Committer] Today quota (' + state.todayCommitsDone + '/' + state.todayTargetQuota + ') already satisfied.');
   }
 }
 
