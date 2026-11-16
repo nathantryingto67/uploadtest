@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-16T14:16:00+08:00",
+    "iteration": 17,
+    "build": "1.4.17",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-16T13:57:00+08:00",
     "iteration": 16,
     "build": "1.4.16",
