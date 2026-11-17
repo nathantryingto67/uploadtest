@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-17T13:57:00+08:00",
+    "iteration": 23,
+    "build": "1.4.23",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-10-13T18:48:00+08:00",
     "desc": "feat(gpa): add cumulative credit unit validation",
     "verified": true
@@ -492,11 +498,6 @@
   {
     "timestamp": "2026-09-29T10:07:00+08:00",
     "desc": "style(buttons): standardize primary action button padding",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-09-29T09:50:00+08:00",
-    "desc": "feat(notes): add quick markdown preview toggle",
     "verified": true
   }
 ]
