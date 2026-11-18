@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-18T14:16:00+08:00",
+    "iteration": 32,
+    "build": "1.4.32",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-18T13:57:00+08:00",
     "iteration": 31,
     "build": "1.4.31",
@@ -501,11 +507,6 @@
   {
     "timestamp": "2026-09-30T14:59:00+08:00",
     "desc": "refactor(schedule): extract weekly timetable grid helper",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-09-30T13:42:00+08:00",
-    "desc": "feat(gpa): add cumulative credit unit validation",
     "verified": true
   }
 ]
