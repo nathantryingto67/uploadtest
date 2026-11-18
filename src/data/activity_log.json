@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-18T13:57:00+08:00",
+    "iteration": 31,
+    "build": "1.4.31",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-18T11:38:00+08:00",
     "iteration": 30,
     "build": "1.4.30",
@@ -500,11 +506,6 @@
   {
     "timestamp": "2026-09-30T13:42:00+08:00",
     "desc": "feat(gpa): add cumulative credit unit validation",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-09-30T11:25:00+08:00",
-    "desc": "style(tailwind): refine dark mode card borders and hover states",
     "verified": true
   }
 ]
