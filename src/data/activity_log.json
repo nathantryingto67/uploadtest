@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-18T11:38:00+08:00",
+    "iteration": 30,
+    "build": "1.4.30",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-18T10:19:00+08:00",
     "iteration": 29,
     "build": "1.4.29",
@@ -499,11 +505,6 @@
   {
     "timestamp": "2026-09-30T11:25:00+08:00",
     "desc": "style(tailwind): refine dark mode card borders and hover states",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-09-30T10:08:00+08:00",
-    "desc": "feat(ui): add responsive sidebar navigation for student portal",
     "verified": true
   }
 ]
