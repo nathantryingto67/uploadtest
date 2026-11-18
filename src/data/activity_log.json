@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-18T09:00:00+08:00",
+    "iteration": 28,
+    "build": "1.4.28",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-17T18:13:00+08:00",
     "iteration": 27,
     "build": "1.4.27",
@@ -497,11 +503,6 @@
   {
     "timestamp": "2026-09-30T09:51:00+08:00",
     "desc": "docs(changelog): document initial semester milestones",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-09-29T16:15:00+08:00",
-    "desc": "test(tasks): verify assignment completion toggle state",
     "verified": true
   }
 ]
