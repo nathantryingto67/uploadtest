@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-19T11:38:00+08:00",
+    "iteration": 36,
+    "build": "1.4.36",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-19T10:19:00+08:00",
     "iteration": 35,
     "build": "1.4.35",
@@ -505,11 +511,6 @@
   {
     "timestamp": "2026-10-01T11:22:00+08:00",
     "desc": "perf(render): memoize course list filtering",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-01T10:05:00+08:00",
-    "desc": "feat(tasks): add due-date sorting for upcoming assignments",
     "verified": true
   }
 ]
