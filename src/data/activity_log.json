@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-21T13:57:00+08:00",
+    "iteration": 50,
+    "build": "1.4.50",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-21T11:38:00+08:00",
     "iteration": 49,
     "build": "1.4.49",
@@ -519,11 +525,6 @@
   {
     "timestamp": "2026-10-03T14:56:00+08:00",
     "desc": "feat(tasks): add due-date sorting for upcoming assignments",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-03T13:39:00+08:00",
-    "desc": "docs(readme): update local development setup instructions",
     "verified": true
   }
 ]
