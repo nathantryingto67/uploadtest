@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-21T16:35:00+08:00",
+    "iteration": 52,
+    "build": "1.4.52",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-21T14:16:00+08:00",
     "iteration": 51,
     "build": "1.4.51",
@@ -521,11 +527,6 @@
   {
     "timestamp": "2026-10-04T09:48:00+08:00",
     "desc": "feat(notes): add quick markdown preview toggle",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-03T16:13:00+08:00",
-    "desc": "perf(render): memoize course list filtering",
     "verified": true
   }
 ]
