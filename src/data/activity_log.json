@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-21T18:13:00+08:00",
+    "iteration": 54,
+    "build": "1.4.54",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-21T17:54:00+08:00",
     "iteration": 53,
     "build": "1.4.53",
@@ -523,11 +529,6 @@
   {
     "timestamp": "2026-10-04T11:22:00+08:00",
     "desc": "feat(pomodoro): add short break 5-minute preset",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-04T10:05:00+08:00",
-    "desc": "style(buttons): standardize primary action button padding",
     "verified": true
   }
 ]
