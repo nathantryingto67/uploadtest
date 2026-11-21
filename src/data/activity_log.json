@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-21T11:38:00+08:00",
+    "iteration": 49,
+    "build": "1.4.49",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-21T10:19:00+08:00",
     "iteration": 48,
     "build": "1.4.48",
@@ -518,11 +524,6 @@
   {
     "timestamp": "2026-10-03T13:39:00+08:00",
     "desc": "docs(readme): update local development setup instructions",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-03T11:22:00+08:00",
-    "desc": "test(gpa): add edge case tests for zero-credit courses",
     "verified": true
   }
 ]
