@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-22T11:38:00+08:00",
+    "iteration": 57,
+    "build": "1.4.57",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-22T10:19:00+08:00",
     "iteration": 56,
     "build": "1.4.56",
@@ -526,11 +532,6 @@
   {
     "timestamp": "2026-10-04T16:13:00+08:00",
     "desc": "test(tasks): verify assignment completion toggle state",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-04T14:56:00+08:00",
-    "desc": "feat(flashcards): add keyboard shortcut for flipping cards",
     "verified": true
   }
 ]
