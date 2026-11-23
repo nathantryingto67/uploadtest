@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-23T09:00:00+08:00",
+    "iteration": 63,
+    "build": "1.4.63",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-22T18:13:00+08:00",
     "iteration": 62,
     "build": "1.4.62",
@@ -532,11 +538,6 @@
   {
     "timestamp": "2026-10-05T16:13:00+08:00",
     "desc": "test(gpa): add edge case tests for zero-credit courses",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-05T14:56:00+08:00",
-    "desc": "refactor(schedule): extract weekly timetable grid helper",
     "verified": true
   }
 ]
