@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-26T11:38:00+08:00",
+    "iteration": 85,
+    "build": "1.4.85",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-26T10:19:00+08:00",
     "iteration": 84,
     "build": "1.4.84",
@@ -554,11 +560,6 @@
   {
     "timestamp": "2026-10-09T09:48:00+08:00",
     "desc": "refactor(components): simplify modal backdrop click handling",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-08T17:30:00+08:00",
-    "desc": "feat(pomodoro): add short break 5-minute preset",
     "verified": true
   }
 ]
