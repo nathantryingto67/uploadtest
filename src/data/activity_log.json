@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-26T13:57:00+08:00",
+    "iteration": 86,
+    "build": "1.4.86",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-26T11:38:00+08:00",
     "iteration": 85,
     "build": "1.4.85",
@@ -555,11 +561,6 @@
   {
     "timestamp": "2026-10-09T10:05:00+08:00",
     "desc": "feat(flashcards): add keyboard shortcut for flipping cards",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-09T09:48:00+08:00",
-    "desc": "refactor(components): simplify modal backdrop click handling",
     "verified": true
   }
 ]
