@@ -1,5 +1,11 @@
 [
   {
+    "timestamp": "2026-11-27T18:13:00+08:00",
+    "iteration": 98,
+    "build": "1.4.98",
+    "status": "verified"
+  },
+  {
     "timestamp": "2026-11-27T17:54:00+08:00",
     "iteration": 97,
     "build": "1.4.97",
@@ -567,11 +573,6 @@
   {
     "timestamp": "2026-10-10T17:31:00+08:00",
     "desc": "style(buttons): standardize primary action button padding",
-    "verified": true
-  },
-  {
-    "timestamp": "2026-10-10T16:14:00+08:00",
-    "desc": "feat(notes): add quick markdown preview toggle",
     "verified": true
   }
 ]
